@@ -1,19 +1,23 @@
+// Song.java
 package com.driver;
 
 public class Song {
     private String title;
     private int length;
     private int likes;
+    private String albumName;
 
-    public Song(){
-
+    public Song() {
     }
 
-    public Song(String title, int length){
+    public Song(String title, int length, String albumName) {
         this.title = title;
         this.length = length;
+        this.albumName = albumName;
+        this.likes = 0;
     }
 
+    // Getters and setters
     public String getTitle() {
         return title;
     }
@@ -36,5 +40,13 @@ public class Song {
 
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
     }
 }

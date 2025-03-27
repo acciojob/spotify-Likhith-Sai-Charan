@@ -1,3 +1,4 @@
+// Playlist.java
 package com.driver;
 
 import java.util.ArrayList;
@@ -7,18 +8,22 @@ public class Playlist {
     private String title;
     private List<Song> songs;
     private List<User> listeners;
+    private User creator;
 
-    public Playlist(){
-        this.songs=new ArrayList<>();
-        this.listeners=new ArrayList<>();
+    public Playlist() {
+        this.songs = new ArrayList<>();
+        this.listeners = new ArrayList<>();
     }
 
-    public Playlist(String title){
+    public Playlist(String title, User creator) {
         this.title = title;
-        this.songs=new ArrayList<>();
-        this.listeners=new ArrayList<>();
+        this.creator = creator;
+        this.songs = new ArrayList<>();
+        this.listeners = new ArrayList<>();
+        this.listeners.add(creator);
     }
 
+    // Getters and setters
     public String getTitle() {
         return title;
     }
@@ -27,19 +32,27 @@ public class Playlist {
         this.title = title;
     }
 
-    public List<Song> getSongs(){
+    public List<Song> getSongs() {
         return songs;
     }
 
-    public void addSong(Song song){
-        this.songs.add(song);
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
     }
 
-    public List<User> getListeners(){
+    public List<User> getListeners() {
         return listeners;
     }
 
-    public void addListener(User user){
-        this.listeners.add(user);
+    public void setListeners(List<User> listeners) {
+        this.listeners = listeners;
+    }
+
+    public User getCreator() {
+        return creator;
+    }
+
+    public void setCreator(User creator) {
+        this.creator = creator;
     }
 }
